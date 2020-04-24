@@ -27,10 +27,10 @@ gunicorn -w 2 -b 0.0.0.0:5000 backend.wsgi:app --preload
 ### Create route
 - Import resources into `backend/api/views.py`
 - Import resource schema into `backend/api/views.py`
-- Add line `api.add_resource(MyNewList, "/mynew")`
+- Add line `api.add_resource(MyNewList, "/mynew")` route is available at `host:5000/api/v1/mynew`
 - Add lines 
 ```
-apispec.spec.components.schema("UserSchema", schema=UserSchema)
-    apispec.spec.path(view=UserResource, app=current_app)
-    apispec.spec.path(view=UserList, app=current_app)
+apispec.spec.components.schema("MyNewSchema", schema=MyNewSchema)
+apispec.spec.path(view=MyNewResource, app=current_app)
+apispec.spec.path(view=MyNewList, app=current_app)
 ```
