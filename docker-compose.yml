@@ -27,19 +27,19 @@ services:
     ports:
       - 5432:5432
 
-#  frontend:
-#    build:
-#      context: ./client
-#      dockerfile: Dockerfile
-#    environment:
-#      - NODE_OPTIONS=--max_old_space_size=8192 # wywalić jak Vue będzie marudzić
-#    volumes:
-#      - ./client:/code/client
-#      - node_modules:/code/client/node_modules
-#    ports:
-#      - 80:80
-#    depends_on:
-#      - backend
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    environment:
+      - NODE_OPTIONS=--max_old_space_size=8192 # wywalić jak Vue będzie marudzić
+    volumes:
+      - ./client:/code/client
+      - node_modules:/code/client/node_modules
+    ports:
+      - 80:8080
+    depends_on:
+      - backend
 
 volumes:
   node_modules:
