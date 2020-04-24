@@ -28,69 +28,6 @@ class ExampleSchema(ma.ModelSchema):
 
 class ExampleResource(Resource):
     """TUTAJ MOŻESZ PISAĆ DOCSY _ SWAGGER SIĘ SAM OGARNIE - OLEJ
-
-    ---
-    get:
-      tags:
-        - api
-      parameters:
-        - in: path
-          name: history_id
-          schema:
-            type: integer
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  history: SearchSchema
-        404:
-          description: history does not exists
-    put:
-      tags:
-        - api
-      parameters:
-        - in: path
-          name: history_id
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              SearchSchema
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  history: SearchSchema
-        404:
-          description: user does not exists
-    delete:
-      tags:
-        - api
-      parameters:
-        - in: path
-          name: history_id
-          schema:
-            type: integer
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  msg:
-                    type: string
-                    example: history deleted
-        404:
-          description: history does not exists
     """
 
     method_decorators = [jwt_required]
@@ -119,37 +56,6 @@ class ExampleResource(Resource):
 
 class ExampleList(Resource):
     """TUTAJ MOŻESZ PISAĆ DOCSY _ SWAGGER SIĘ SAM OGARNIE - OLEJ
-
-    ---
-    get:
-      tags:
-        - api
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  hisrtory: SearchSchema
-    post:
-      tags:
-        - api
-      requestBody:
-        content:
-          application/json:
-            schema:
-              SearchSchema
-      responses:
-        201:
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  results:
-                    type: object
-                    example: [{"URL":"https://www.goog.pl"}]
     """
 
     method_decorators = [jwt_required]
