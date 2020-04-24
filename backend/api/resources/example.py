@@ -5,8 +5,6 @@ from backend.models import Example, User
 from backend.extensions import ma, db
 
 
-
-
 def create_path(json_entry):
     return "http://prawo.sejm.gov.pl/isap.nsf/download.xsp/{}/{}/{}".format(
         json_entry["address"],
@@ -75,4 +73,4 @@ class ExampleList(Resource):
         schema = ExampleSchema(partial=True)
         search = schema.load(request.json)
         search.user_id = user_id
-        return {"msg":"example updated or sth you will figure it out"}
+        return {"msg": "example updated or sth you will figure it out"}

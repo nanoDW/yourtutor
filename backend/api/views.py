@@ -8,7 +8,8 @@ from backend.api.resources import (
     UserResource,
     UserList,
     ExampleResource,
-    ExampleList)
+    ExampleList,
+)
 from backend.api.resources.user import UserSchema
 
 blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
