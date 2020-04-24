@@ -28,13 +28,6 @@ lint-python:
     - "python3 -m pip install flake8"
     - "python3 -m flake8 --statistics --show-source"
 
-unit-tests-python:
-  <<: *python_job_definition
-  script:
-    - "python3 -m pip install wheel"
-    - "python3 -m pip install -r requirements.txt"
-    - "tox"
-
 deploy_stage:
   stage: deploy
   environment: master
