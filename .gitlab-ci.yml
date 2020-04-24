@@ -1,0 +1,47 @@
+image: python:latest
+stages:
+  - test
+  - deploy
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -y -qq sshpass
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+.python_job_template: &python_job_definition
+  image: python:latest
+  stage: test
+  before_script:
+    - "apt-get install -y libsm6 libxext6 libxrender-dev libpq-dev"
+    - "apt-get -y install python3-distutils"
+
+lint-python:
+  <<: *python_job_definition
+  script:
+    - "python3 -m pip install flake8"
+    - "python3 -m flake8 --statistics --show-source"
+
+unit-tests-python:
+  <<: *python_job_definition
+  script:
+    - "python3 -m pip install wheel"
+    - "python3 -m pip install -r requirements.txt"
+    - "tox"
+
+deploy_stage:
+  stage: deploy
+  environment: master
+  only:
+    - master
+  script:
+    - sshpass -V
+    - export SSHPASS=$HOST_USER_PASSWORD
+    - sshpass -e scp -o stricthostkeychecking=no -r * $HOST_USER@$HOST:/home/$HOST_USER/server
+    - sshpass -e ssh $HOST_USER@$HOST "export POSTGRES_USER=$POSTGRES_USER && export POSTGRES_PASSWORD=$POSTGRES_PASSWORD && export POSTGRES_DB=$POSTGRES_DB && export DB_HOST=$DB_HOST && export ADMIN_PASS=$ADMIN_PASS && export SECRET_KEY=$SECRET_KEY && cd /home/$HOST_USER/server  && docker-compose down --remove-orphans && docker-compose up --build -d"
