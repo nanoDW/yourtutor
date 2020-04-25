@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import storiesJSON from "../assets/example.json";
 
 Vue.use(Vuex);
 
@@ -17,6 +18,7 @@ export default new Vuex.Store({
       { id: 1, description: "Highlight app description" },
     ],
     user: { ...emptyUser },
+    stories: [],
   },
   mutations: {
     NEXT_STEP(state) {
@@ -31,6 +33,9 @@ export default new Vuex.Store({
     RESET_USER(state) {
       state.user = { ...emptyUser };
     },
+    LOAD_STORIES(state, payload) {
+      state.stories = payload;
+    },
   },
   actions: {
     changeStep({ commit }, payload) {
@@ -41,8 +46,16 @@ export default new Vuex.Store({
         commit("RESET_USER");
       }
     },
-    chooseUser({ commit }, payload) {
+    chooseUser({ commit, dispatch }, payload) {
       commit("CHOOSE_USER", payload);
+      dispatch("loadStories");
+    },
+    loadStories({ commit }) {
+      const stories = Object.keys(storiesJSON)
+        .sort((a, b) => a - b)
+        .map((story) => storiesJSON[story]);
+
+      commit("LOAD_STORIES", stories);
     },
   },
   modules: {},

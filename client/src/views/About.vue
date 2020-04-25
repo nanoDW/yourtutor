@@ -13,7 +13,9 @@
     <v-col cols="6" class="my-12">
       <AppContainer />
     </v-col>
-    <v-col cols="3">Right side</v-col>
+    <v-col cols="3" class="my-12">
+      <History />
+    </v-col>
   </v-row>
 </template>
 
@@ -22,9 +24,10 @@ import { mapActions, mapState } from "vuex";
 import Logo from "../shared/Logo";
 import User from "../components/User";
 import AppContainer from "../components/Container";
+import History from "../components/History.vue";
 
 export default {
-  components: { Logo, User, AppContainer },
+  components: { Logo, User, AppContainer, History },
   methods: {
     ...mapActions(["changeStep"]),
     goToWelcomeScreen() {
