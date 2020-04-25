@@ -1,5 +1,5 @@
 <template>
-  <div class="content-container" :class="{ active: isActive, 'box-shadow': !isActive }">
+  <div class="content-container" :class="{ active: isActive }">
     <v-card style="border-radius: 1.75rem !important; height:100% !important" class="pa-12">
       <div class="d-flex flex-wrap align-center justify-center" style="height: 100%">
         <component :is="component" />
@@ -23,7 +23,12 @@ export default {
       return this.currentStep === 3;
     },
     component() {
-      return StartButton;
+      switch (this.currentStep) {
+        case 3:
+          return StartButton;
+        default:
+          return StartButton;
+      }
     },
   },
 };

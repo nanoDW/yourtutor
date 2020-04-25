@@ -4,6 +4,9 @@
   font-family: "Noto Sans JP", sans-serif;
   color: $tertiary;
   scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
 
 .theme--light.v-application {
