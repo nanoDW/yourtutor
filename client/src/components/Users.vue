@@ -3,9 +3,14 @@
     <v-row class="align-stretch">
       <v-col cols="6">
         <div class="users" :class="{ active: isActive, 'box-shadow': !isActive }">
-          <v-card flat tile>
+          <v-card
+            flat
+            tile
+            height="100%"
+            style="display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch"
+          >
             <User @click.native="selectUser(girl)" :user="girl" :is-active="isActive" />
-            <div class="text-center">
+            <div class="text-center d-flex" style="flex-wrap:wrap; align-items: flex-end">
               <button class="button" @click="selectUser(girl)" :class="{ 'button-active': isActive }">
                 Choose {{ girl.name }}
               </button>
@@ -16,9 +21,14 @@
 
       <v-col cols="6" class="d-flex flex-wrap align-end">
         <div class="users" :class="{ active: isActive, 'box-shadow': !isActive }">
-          <v-card flat tile>
+          <v-card
+            flat
+            tile
+            height="100%"
+            style="display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch"
+          >
             <User :user="boy" :is-active="isActive" />
-            <div class="text-center">
+            <div class="text-center d-flex " style="flex-wrap:wrap; align-items: flex-end">
               <button class="button" @click="selectUser(boy)" :class="{ 'button-active': isActive }">
                 Choose {{ boy.name }}
               </button>

@@ -1,7 +1,7 @@
 <template>
   <div class="history" :class="{ active: isActive }">
     <v-card
-      style="border-radius: 1.75rem !important; height:calc(100vh - 24px) !important; max-height: 100vh; overflow: scroll"
+      style="border-radius: 1.75rem !important; height:calc(100vh - 24px) !important; max-height: calc(100vh - 48px); overflow: scroll"
       class="pa-4"
     >
       <p v-if="currentStep < 4">Press "Start learning" to show user's history</p>

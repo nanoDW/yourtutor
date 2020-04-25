@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import storiesJSON from "../assets/example.json";
+import storiesJSON from "../assets/jsonForDevelopment.json";
 
 Vue.use(Vuex);
 

@@ -1,6 +1,7 @@
 <template>
   <div class="description" :class="{ active: isActive, 'box-shadow': !isActive }">
     <v-card flat tile height="100%">
+      <h1 class="description-title">Welcome to your personalized path of education</h1>
       <p>
         We would like to give you a taste of how Artificial Intelligence can be used to provide students with tailored
         education materials. Everyone has their own way of learning and gains knowledge and skills at a different pace
@@ -12,8 +13,7 @@
         learning, to show their personalised learning paths prepared by our solution.
       </p>
       <v-row v-if="isActive">
-        <v-col cols="9"></v-col>
-        <button @click="nextStep" class="button button-active">Next</button>
+        <button @click="nextStep" class="button button-active description-button">Choose your student</button>
       </v-row>
     </v-card>
   </div>
