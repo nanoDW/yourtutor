@@ -1,0 +1,16 @@
+@import "./variables";
+
+.description {
+  width: 100%;
+  min-height: 20rem;
+  margin-top: 3rem;
+  padding: 0.25rem;
+  border-radius: 2rem;
+  background-color: white;
+
+  .v-sheet--tile {
+    border-radius: 1.75rem !important;
+    padding: 2.5rem;
+    font-size: 1.25rem;
+  }
+}

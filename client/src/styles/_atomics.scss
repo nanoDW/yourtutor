@@ -1,0 +1,41 @@
+.button {
+  font-size: 1.25rem;
+  padding: 0.75rem 2rem;
+  border: 0;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  background-color: $tertiary;
+  color: white;
+  font-weight: 700;
+
+  &:hover {
+    box-shadow: 0 0 0.25rem 0.25rem $gray;
+  }
+}
+
+.button-active {
+  background: linear-gradient(to left, $primary-dark, $secondary-dark);
+}
+
+.active {
+  background: linear-gradient(to left, $secondary, $primary, $secondary);
+  background-size: 200% 200%;
+  animation: animate 3s infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 0 0.25rem 0.25rem $gray;
+}
