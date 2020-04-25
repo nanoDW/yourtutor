@@ -1,7 +1,7 @@
 <template>
   <div ref="users" style="width: 100%">
     <v-row class="align-stretch">
-      <v-col cols="6">
+      <v-col cols="6" class="d-flex flex-wrap align-end">
         <div class="users" :class="{ active: isActive, 'box-shadow': !isActive }">
           <v-card
             flat
