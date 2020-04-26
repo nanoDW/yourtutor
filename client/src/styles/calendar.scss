@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+.calendar {
+  width: 100%;
+
+  fill: $primary;
+  opacity: 0.1;
+  position: absolute;
+
+  top: 15%;
+  height: 100px;
+}

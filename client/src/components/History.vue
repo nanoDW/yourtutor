@@ -1,10 +1,14 @@
 <template>
   <div class="history" :class="{ active: isActive }">
     <v-card
-      style="border-radius: 1.75rem !important; height:calc(100vh - 24px) !important; max-height: calc(100vh - 48px); overflow: scroll"
+      style="border-radius: 1.75rem !important; height:calc(100vh - 24px) !important; max-height: calc(100vh - 48px); overflow: scroll;"
       class="pa-4"
     >
-      <p v-if="currentStep < 4">Press "Start learning" to show user's history</p>
+      <div class="history-locked" v-if="currentStep < 4">
+        <calendar />
+        <p class="d">Press "Start learning" to show user's history</p>
+        <count />
+      </div>
       <div v-else v-for="story in loadedStories" :key="story.step" class="history-element">
         <p>{{ story.step }}. action: {{ story.action }}</p>
         <p>subject: {{ story.subject }}</p>
@@ -22,8 +26,11 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
+import Calendar from "../svg/Calendar.vue";
+import Count from "../svg/Count.vue";
 
 export default {
+  components: { Calendar, Count },
   data() {
     return {
       loadedStories: [],
@@ -50,7 +57,7 @@ export default {
           this.loadedStories.unshift(this.stories[loadedStoriesAmount]);
           loadedStoriesAmount += 1;
         }
-      }, 0);
+      }, 10);
 
       if (loadedStoriesAmount === this.stories.length) {
         clearInterval(interval);
