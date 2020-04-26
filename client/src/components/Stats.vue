@@ -1,9 +1,7 @@
 <template>
   <div class="ma-12 text-center">
-    <h2>{{user.name}} has finished learning! The summary of {{ isGirl2ndForm }} learning process is shown below.</h2>
-    <p
-      class="px-4 mt-6"
-    >If taught by our model {{ isGirl }} would have ended in {{ stories.length }} steps. Because we forced listening {{ isGirl }} needed {{ stories.length + createdPath.length }}.</p>
+    <h2>{{user.name}} has finished learning! The summary of learning process is shown below.</h2>
+    <p class="px-4 mt-6">{{ userStory }}</p>
     <img
       class="my-6 img"
       :src="require('../assets/' + user.name + '_with_forced_' + learningChartType + '.png')"
@@ -27,11 +25,19 @@ export default {
     learningChartType() {
       return this.chosenPath === "visual" ? "visuals" : this.chosenPath;
     },
-    isGirl() {
-      return this.user.name === "Yara" ? "she" : "he";
-    },
-    isGirl2ndForm() {
-      return this.user.name === "Yara" ? "her" : "his";
+    userStory() {
+      if (this.user.name === "James") {
+        if (this.chosenPath === "visual") {
+          return `James with forced visuals: If taught by our model he would have ended in 267 steps. Because we forced visual learning he needed 355`;
+        }
+        return `James with forced reading: If taught by our model he would have ended in 267 steps. Because we forced reading he needed 380`;
+      }
+
+      if (this.chosenPath === "listening") {
+        return `Yara with forced listening: If taught by our model she would have ended in 194 steps. Because we forced listening she needed 323`;
+      }
+
+      return `Yara with forced reading: If taught by our model she would have ended in 194 steps. Because we forced reading she needed 367`;
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="content-container" :class="{ active: isActive }">
-    <v-card height="100%" max-height="calc(100vh)" style="border-radius: 1.75rem !important;  ">
+    <v-card height="100%" style="border-radius: 1.75rem !important;  ">
       <div
         class="d-flex flex-wrap align-center justify-center"
         style="height: 100%; overflow: scroll"
