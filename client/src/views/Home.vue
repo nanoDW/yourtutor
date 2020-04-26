@@ -10,6 +10,7 @@
       <v-row>
         <Users />
       </v-row>
+      <div class="py-12"></div>
     </v-col>
     <v-col cols="3"></v-col>
   </v-row>

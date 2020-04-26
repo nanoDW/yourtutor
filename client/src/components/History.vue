@@ -19,10 +19,10 @@
             </div>
           </v-expansion-panel-header>
           <v-expansion-panel-content>
-            <p>subject: {{ story.subject }}</p>
-            <p>difficulty: {{ story.difficulty }}</p>
-            <div>skills: {{ returnSkillsAsAString(story.skills) }}</div>
-            <p v-if="story.action === 'train'">learning type: {{ story.learning_type }}</p>
+            <p><b>Subject</b>: {{ story.subject }}</p>
+            <p><b>Difficulty</b>: {{ story.difficulty }}</p>
+            <p><b>Skills</b>: {{ returnSkillsAsAString(story.skills) }}</p>
+            <p v-if="story.action === 'train'"><b>Learning type</b>: {{ story.learning_type }}</p>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
