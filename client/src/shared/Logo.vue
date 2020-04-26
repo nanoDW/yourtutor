@@ -1,6 +1,8 @@
 <template>
   <div class="logo">
-      <div class="logo__content">Logo</div>
+    <v-card class="pa-9" width="100%" style="border-radius: 2rem !important">
+      <img src="../assets/logo_yt.png" class="logo__content" />
+    </v-card>
   </div>
 </template>
 

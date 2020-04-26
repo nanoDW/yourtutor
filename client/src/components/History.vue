@@ -1,7 +1,9 @@
 <template>
   <div class="history" :class="{ active: isActive }">
     <v-card
-      style="border-radius: 1.75rem !important; height:calc(100vh - 24px) !important; max-height: calc(100vh - 48px); overflow: scroll;"
+      height="100%"
+      max-height="calc(100vh)"
+      style="border-radius: 1.75rem !important; !important; overflow: scroll;"
       class="pa-4"
     >
       <div class="history-locked" v-if="currentStep < 4">
@@ -14,15 +16,35 @@
           <v-expansion-panel-header>
             <div class="history-element-header">
               {{ story.step }}.
-              <span v-if="story.action === `train`"><b>Learning</b> - <Improvement /> {{ story.improvement }}</span>
-              <span v-else><b>Testing</b> - <TestScore /> {{ story.test_score }}</span>
+              <span v-if="story.action === `train`">
+                <b>Learning</b> -
+                <Improvement />
+                {{ story.improvement }}
+              </span>
+              <span v-else>
+                <b>Testing</b> -
+                <TestScore />
+                {{ story.test_score }}
+              </span>
             </div>
           </v-expansion-panel-header>
           <v-expansion-panel-content>
-            <p><b>Subject</b>: {{ story.subject }}</p>
-            <p><b>Difficulty</b>: {{ story.difficulty }}</p>
-            <p><b>Skills</b>: {{ returnSkillsAsAString(story.skills) }}</p>
-            <p v-if="story.action === 'train'"><b>Learning type</b>: {{ story.learning_type }}</p>
+            <p>
+              <b>Subject</b>
+              : {{ story.subject }}
+            </p>
+            <p>
+              <b>Difficulty</b>
+              : {{ story.difficulty }}
+            </p>
+            <p>
+              <b>Skills</b>
+              : {{ returnSkillsAsAString(story.skills) }}
+            </p>
+            <p v-if="story.action === 'train'">
+              <b>Learning type</b>
+              : {{ story.learning_type }}
+            </p>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -41,17 +63,18 @@ export default {
   components: { Calendar, Count, Improvement, TestScore },
   data() {
     return {
-      loadedStories: [],
+      loadedStories: []
     };
   },
   computed: {
     ...mapState({
-      currentStep: (state) => state.currentStep,
-      stories: (state) => state.stories,
+      currentStep: state => state.currentStep,
+      stories: state => state.stories,
+      chosenPath: state => state.chosenPath
     }),
     isActive() {
-      return this.currentStep === 4;
-    },
+      return this.currentStep === 4 || this.currentStep === 6;
+    }
   },
   methods: {
     ...mapActions(["changeStep"]),
@@ -74,14 +97,32 @@ export default {
 
       return 0;
     },
+    simulateTraining() {
+      let loadedStoriesAmount = 0;
+      const interval = setInterval(() => {
+        if (loadedStoriesAmount < this.chosenPath.length) {
+          this.loadedStories.unshift(this.chosenPath[loadedStoriesAmount]);
+          loadedStoriesAmount += 1;
+
+          if (loadedStoriesAmount === this.chosenPath.length) {
+            this.changeStep(1);
+            clearInterval(interval);
+          }
+        }
+      }, 500);
+
+      return 0;
+    }
   },
   watch: {
     isActive() {
       if (this.isActive) {
-        this.simulateLoadingData();
+        this.currentStep === 4
+          ? this.simulateLoadingData()
+          : this.simulateTraining();
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

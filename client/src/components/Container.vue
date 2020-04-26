@@ -1,7 +1,10 @@
 <template>
   <div class="content-container" :class="{ active: isActive }">
-    <v-card style="border-radius: 1.75rem !important; height:100% !important">
-      <div class="d-flex flex-wrap align-center justify-center" style="height: 100%; overflow:hidden">
+    <v-card height="100%" style="border-radius: 1.75rem !important;">
+      <div
+        class="d-flex flex-wrap align-center justify-center"
+        style="height: 100%; overflow:hidden"
+      >
         <component :is="component" :currentStep="currentStep" />
       </div>
     </v-card>
@@ -17,8 +20,8 @@ export default {
   components: {},
   computed: {
     ...mapState({
-      user: (state) => state.user,
-      currentStep: (state) => state.currentStep,
+      user: state => state.user,
+      currentStep: state => state.currentStep
     }),
     isActive() {
       return this.currentStep === 3 || this.currentStep === 5;
@@ -32,8 +35,8 @@ export default {
         default:
           return StartButton;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -8,6 +8,7 @@ const emptyUser = {
   name: "",
   age: "",
   description: "",
+  type: "",
 };
 
 export default new Vuex.Store({
@@ -19,6 +20,7 @@ export default new Vuex.Store({
     ],
     user: { ...emptyUser },
     stories: [],
+    chosenPath: [],
   },
   mutations: {
     NEXT_STEP(state) {
@@ -35,6 +37,9 @@ export default new Vuex.Store({
     },
     LOAD_STORIES(state, payload) {
       state.stories = payload;
+    },
+    CHOOSE_PATH(state, payload) {
+      state.chosenPath = payload;
     },
   },
   actions: {
@@ -71,6 +76,27 @@ export default new Vuex.Store({
 
       commit("LOAD_STORIES", stories);
     },
+    chooseLearningType({ commit }) {
+      const stories = Object.keys(storiesJSON)
+        .sort((a, b) => a - b)
+        .map((story) => storiesJSON[story])
+        .map((story) => {
+          if (story.action === "train") {
+            return {
+              ...story,
+              improvement: story.improvement.toFixed(3),
+              skills: story.skills.map((skill) => skill.toFixed(3)),
+            };
+          }
+          return {
+            ...story,
+            test_score: story.test_score.toFixed(3),
+            skills: story.skills.map((skill) => skill.toFixed(3)),
+          };
+        });
+      commit("CHOOSE_PATH", stories);
+    },
   },
+
   modules: {},
 });

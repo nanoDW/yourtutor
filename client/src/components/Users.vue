@@ -11,9 +11,11 @@
           >
             <User @click.native="selectUser(girl)" :user="girl" :is-active="isActive" />
             <div class="text-center d-flex" style="flex-wrap:wrap; align-items: flex-end">
-              <button class="button" @click="selectUser(girl)" :class="{ 'button-active': isActive }">
-                Choose {{ girl.name }}
-              </button>
+              <button
+                class="button"
+                @click="selectUser(girl)"
+                :class="{ 'button-active': isActive }"
+              >Choose {{ girl.name }}</button>
             </div>
           </v-card>
         </div>
@@ -28,10 +30,12 @@
             style="display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch"
           >
             <User :user="boy" :is-active="isActive" />
-            <div class="text-center d-flex " style="flex-wrap:wrap; align-items: flex-end">
-              <button class="button" @click="selectUser(boy)" :class="{ 'button-active': isActive }">
-                Choose {{ boy.name }}
-              </button>
+            <div class="text-center d-flex" style="flex-wrap:wrap; align-items: flex-end">
+              <button
+                class="button"
+                @click="selectUser(boy)"
+                :class="{ 'button-active': isActive }"
+              >Choose {{ boy.name }}</button>
             </div>
           </v-card>
         </div>
@@ -47,7 +51,7 @@ export default {
   components: { User },
   computed: {
     ...mapState({
-      currentStep: (state) => state.currentStep,
+      currentStep: state => state.currentStep
     }),
     isActive() {
       return this.currentStep === 2;
@@ -59,6 +63,7 @@ export default {
         age: 9,
         description:
           "Yara likes to learn from illustrated books, her favourite one is a geographical atlas with maps and photos from different locations. She also enjoys watching morning shows with foreign language classes as she can easily link meanings of words with their visual shapes.",
+        type: "visual"
       };
     },
     boy() {
@@ -68,8 +73,9 @@ export default {
         age: 8,
         description:
           "James loves to join his grandma in listening to poetic radio broadcasts as it makes his imagination visit all the places and times from the readings. He quickly grasps new words by hearing multiple descriptions and various ways of their pronunciation.",
+        type: "listener"
       };
-    },
+    }
   },
   methods: {
     ...mapActions(["changeStep", "chooseUser"]),
@@ -81,15 +87,15 @@ export default {
       this.chooseUser(user);
       this.$router.push("/app");
       this.changeStep(1);
-    },
+    }
   },
   watch: {
     isActive() {
       if (this.isActive) {
         this.$refs.users.scrollIntoView();
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

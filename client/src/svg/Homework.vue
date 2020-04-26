@@ -1,7 +1,7 @@
 <template>
   <svg
     class="homework"
-    :class="{ 'active-icon': currentStep === 4 }"
+    :class="{ 'active-icon': currentStep === 4 || currentStep === 6 }"
     height="512"
     viewBox="0 0 64 64"
     width="512"
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  props: ["currentStep"],
+  props: ["currentStep"]
 };
 </script>
 
