@@ -49,10 +49,10 @@ export default {
 
 @keyframes animate-icon {
   from {
-    transform: rotate(0deg) translateX(200px) rotate(0deg);
+    transform: rotate(0deg) translateX(250px) rotate(0deg);
   }
   to {
-    transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
   }
 }
 </style>

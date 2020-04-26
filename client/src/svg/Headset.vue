@@ -51,10 +51,10 @@ export default {
 
 @keyframes animate-icon {
   from {
-    transform: rotate(270deg) translateX(200px) rotate(270deg);
+    transform: rotate(270deg) translateX(250px) rotate(90deg);
   }
   to {
-    transform: rotate(630deg) translateX(200px) rotate(-270deg);
+    transform: rotate(630deg) translateX(250px) rotate(-270deg);
   }
 }
 </style>

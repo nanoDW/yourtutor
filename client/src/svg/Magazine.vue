@@ -77,10 +77,10 @@ export default {
 
 @keyframes animate-icon {
   from {
-    transform: rotate(180deg) translateX(200px) rotate(180deg);
+    transform: rotate(180deg) translateX(250px) rotate(180deg);
   }
   to {
-    transform: rotate(540deg) translateX(200px) rotate(-180deg);
+    transform: rotate(540deg) translateX(250px) rotate(-180deg);
   }
 }
 </style>

@@ -70,7 +70,7 @@ export default {
             clearInterval(interval);
           }
         }
-      }, 10);
+      }, 500);
 
       return 0;
     },
