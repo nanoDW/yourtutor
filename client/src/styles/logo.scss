@@ -2,16 +2,15 @@
 
 .logo {
   width: 100%;
-  padding: 3rem 2rem 0;
+  padding: 4rem 2rem 0;
   width: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
 
   &__content {
-    height: 10rem;
+    height: 14rem;
     color: $tertiary;
   }
 }

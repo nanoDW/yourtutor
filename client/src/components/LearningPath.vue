@@ -26,7 +26,7 @@ export default {
       user: state => state.user
     }),
     availableTypes() {
-      return ["visual", "listener", "balanced"].filter(
+      return ["visuals", "listening", "reading"].filter(
         el => el !== this.user.type
       );
     }

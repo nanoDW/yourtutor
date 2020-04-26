@@ -9,12 +9,13 @@
             height="100%"
             style="display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch"
           >
-            <User @click.native="selectUser(girl)" :user="girl" :is-active="isActive" />
+            <User :user="girl" :is-active="isActive" />
             <div class="text-center d-flex" style="flex-wrap:wrap; align-items: flex-end">
               <button
                 class="button"
                 @click="selectUser(girl)"
                 :class="{ 'button-active': isActive }"
+                :disabled="!isActive"
               >Choose {{ girl.name }}</button>
             </div>
           </v-card>
@@ -35,6 +36,7 @@
                 class="button"
                 @click="selectUser(boy)"
                 :class="{ 'button-active': isActive }"
+                :disabled="!isActive"
               >Choose {{ boy.name }}</button>
             </div>
           </v-card>
@@ -63,7 +65,7 @@ export default {
         age: 9,
         description:
           "Yara likes to learn from illustrated books, her favourite one is a geographical atlas with maps and photos from different locations. She also enjoys watching morning shows with foreign language classes as she can easily link meanings of words with their visual shapes.",
-        type: "visual"
+        type: "visuals"
       };
     },
     boy() {
@@ -73,7 +75,7 @@ export default {
         age: 8,
         description:
           "James loves to join his grandma in listening to poetic radio broadcasts as it makes his imagination visit all the places and times from the readings. He quickly grasps new words by hearing multiple descriptions and various ways of their pronunciation.",
-        type: "listener"
+        type: "listening"
       };
     }
   },
