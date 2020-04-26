@@ -1,0 +1,27 @@
+@import "./variables";
+
+.description {
+  width: 100%;
+  min-height: 20rem;
+  margin-top: 3rem;
+  padding: 0.25rem;
+  border-radius: 2rem;
+  background-color: white;
+
+  .v-sheet--tile {
+    border-radius: 1.75rem !important;
+    padding: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+.description-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: $secondary-dark;
+}
+
+.description-button {
+  margin: 1rem auto;
+  text-transform: uppercase;
+}

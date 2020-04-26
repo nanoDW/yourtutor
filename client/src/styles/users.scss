@@ -1,0 +1,70 @@
+@import "./variables";
+
+.img {
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+}
+
+.img-background {
+  padding: 1rem 2rem;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+
+  &:hover {
+    .img {
+      transform: scale(1.15);
+    }
+  }
+}
+
+.users {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 0.25rem;
+  border-radius: 2rem !important;
+  background-color: white;
+  height: 100%;
+
+  .v-sheet--tile {
+    border-radius: 1.75rem !important;
+    padding: 1rem;
+    font-size: 1.25rem;
+  }
+}
+
+.bio {
+  margin: auto;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  min-height: 380px;
+  max-width: 400px;
+}
+
+.bio-bg {
+  position: relative;
+  width: 100%;
+  background: url("../assets/pen.svg");
+  background-repeat: no-repeat;
+  background-size: 70% auto;
+  background-position: top center;
+}
+
+.bio-book {
+  position: absolute;
+}
+
+.user {
+}
+
+.hourglass-icon {
+  font-size: 200px;
+}
+
+.user-personal {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}

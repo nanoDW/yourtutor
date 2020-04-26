@@ -1,0 +1,10 @@
+@import "./variables";
+
+.count {
+  position: absolute;
+  bottom: 15%;
+  height: 120px;
+
+  opacity: 0.1;
+  fill: $secondary;
+}

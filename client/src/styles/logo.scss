@@ -1,0 +1,16 @@
+@import "./variables";
+
+.logo {
+  width: 100%;
+  padding: 3rem 2rem 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    height: 14rem;
+    color: $tertiary;
+  }
+}
