@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import storiesJSON from "../assets/jsonForDevelopment.json";
 
 Vue.use(Vuex);
 
@@ -59,47 +58,19 @@ export default new Vuex.Store({
       commit("CHOOSE_USER", payload);
       dispatch("loadStories");
     },
-    loadStories({ commit }) {
-      const stories = Object.keys(storiesJSON)
-        .sort((a, b) => a - b)
-        .map((story) => storiesJSON[story])
-        .map((story) => {
-          if (story.action === "train") {
-            return {
-              ...story,
-              improvement: story.improvement.toFixed(3),
-              skills: story.skills.map((skill) => skill.toFixed(3)),
-            };
-          }
-          return {
-            ...story,
-            test_score: story.test_score.toFixed(3),
-            skills: story.skills.map((skill) => skill.toFixed(3)),
-          };
-        });
+    async loadStories({ state, commit }) {
+      const storiesJSON = await import(`../assets/${state.user.name}_org.json`);
+      const stories = Object.keys(storiesJSON.default).map((story) => storiesJSON[story]);
 
       commit("LOAD_STORIES", stories);
     },
-    chooseLearningType({ commit }, payload) {
-      const stories = Object.keys(storiesJSON)
-        .sort((a, b) => a - b)
-        .map((story) => storiesJSON[story])
-        .map((story) => {
-          if (story.action === "train") {
-            return {
-              ...story,
-              improvement: story.improvement.toFixed(3),
-              skills: story.skills.map((skill) => skill.toFixed(3)),
-              step: story.step + 50,
-            };
-          }
-          return {
-            ...story,
-            test_score: story.test_score.toFixed(3),
-            skills: story.skills.map((skill) => skill.toFixed(3)),
-            step: story.step + 50,
-          };
-        });
+    async chooseLearningType({ commit, state }, payload) {
+      const short = payload === "visual" ? "vis" : payload.substring(0, 4);
+
+      const storiesJSON = await import(`../assets/${state.user.name}_forced_${short}`);
+
+      const stories = Object.keys(storiesJSON).map((story) => storiesJSON[story]);
+
       commit("CHOOSE_PATH", payload);
       commit("CREATE_PATH", stories);
     },
