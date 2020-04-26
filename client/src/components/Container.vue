@@ -1,7 +1,7 @@
 <template>
   <div class="content-container" :class="{ active: isActive }">
-    <v-card style="border-radius: 1.75rem !important; height:100% !important" class="pa-12">
-      <div class="d-flex flex-wrap align-center justify-center" style="height: 100%">
+    <v-card style="border-radius: 1.75rem !important; height:100% !important">
+      <div class="d-flex flex-wrap align-center justify-center" style="height: 100%; overflow:hidden">
         <component :is="component" />
       </div>
     </v-card>
@@ -11,21 +11,24 @@
 <script>
 import { mapState } from "vuex";
 import StartButton from "./StartButton";
+import LearningPath from "./LearningPath.vue";
 
 export default {
-  components: { StartButton },
+  components: {},
   computed: {
     ...mapState({
       user: (state) => state.user,
       currentStep: (state) => state.currentStep,
     }),
     isActive() {
-      return this.currentStep === 3;
+      return this.currentStep === 3 || this.currentStep === 5;
     },
     component() {
       switch (this.currentStep) {
         case 3:
           return StartButton;
+        case 5:
+          return LearningPath;
         default:
           return StartButton;
       }

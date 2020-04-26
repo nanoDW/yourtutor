@@ -64,13 +64,14 @@ export default {
         if (loadedStoriesAmount < this.stories.length) {
           this.loadedStories.unshift(this.stories[loadedStoriesAmount]);
           loadedStoriesAmount += 1;
+
+          if (loadedStoriesAmount === this.stories.length) {
+            this.changeStep(1);
+            clearInterval(interval);
+          }
         }
       }, 10);
 
-      if (loadedStoriesAmount === this.stories.length) {
-        clearInterval(interval);
-        this.changeStep(1);
-      }
       return 0;
     },
   },

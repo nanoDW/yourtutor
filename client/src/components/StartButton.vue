@@ -1,5 +1,7 @@
 <template>
-  <button @click="nextStep" class="button button-active">Start learning</button>
+  <div class="start-learning-bg">
+    <button @click="nextStep" class="button button-active">Start learning</button>
+  </div>
 </template>
 
 <script>
@@ -15,3 +17,5 @@ export default {
   },
 };
 </script>
+
+<style src="../styles/start-button.scss" lang="scss" />
