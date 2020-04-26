@@ -34,3 +34,25 @@
     text-align: center;
   }
 }
+
+.history-element-header {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.v-expansion-panel {
+  margin-bottom: 0.5rem;
+  border-radius: 1.5rem;
+}
+
+.v-expansion-panel--active + .v-expansion-panel {
+  border-radius: 1.5rem !important;
+}
+
+.v-expansion-panel--active {
+  border-radius: 1.5rem !important;
+}
+
+.theme--light.v-expansion-panels .v-expansion-panel:not(:first-child)::after {
+  border: 0 !important;
+}

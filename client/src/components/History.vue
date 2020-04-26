@@ -9,17 +9,23 @@
         <p class="d">Press "Start learning" to show user's history</p>
         <count />
       </div>
-      <div v-else v-for="story in loadedStories" :key="story.step" class="history-element">
-        <p>{{ story.step }}. action: {{ story.action }}</p>
-        <p>subject: {{ story.subject }}</p>
-        <p>difficulty: {{ story.difficulty }}</p>
-        <p>test score: {{ story.test_score }}</p>
-        <p>reward: {{ story.reward }}</p>
-        <div>skills: {{ returnSkillsAsAString(story.skills) }}</div>
-        <p v-if="story.action === 'train'">improvement: {{ story.improvement }}</p>
-        <p v-if="story.action === 'train'">learning type: {{ story.learning_type }}</p>
-        <p v-if="story.action === 'train'">episode: {{ story.episode }}</p>
-      </div>
+      <v-expansion-panels v-else>
+        <v-expansion-panel v-for="story in loadedStories" :key="story.step">
+          <v-expansion-panel-header>
+            <div class="history-element-header">
+              {{ story.step }}.
+              <span v-if="story.action === `train`"><b>Learning</b> - <Improvement /> {{ story.improvement }}</span>
+              <span v-else><b>Testing</b> - <TestScore /> {{ story.test_score }}</span>
+            </div>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <p>subject: {{ story.subject }}</p>
+            <p>difficulty: {{ story.difficulty }}</p>
+            <div>skills: {{ returnSkillsAsAString(story.skills) }}</div>
+            <p v-if="story.action === 'train'">learning type: {{ story.learning_type }}</p>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-card>
   </div>
 </template>
@@ -28,9 +34,11 @@
 import { mapState, mapActions } from "vuex";
 import Calendar from "../svg/Calendar.vue";
 import Count from "../svg/Count.vue";
+import Improvement from "../svg/Improvement.vue";
+import TestScore from "../svg/TestScore.vue";
 
 export default {
-  components: { Calendar, Count },
+  components: { Calendar, Count, Improvement, TestScore },
   data() {
     return {
       loadedStories: [],

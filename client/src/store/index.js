@@ -53,7 +53,21 @@ export default new Vuex.Store({
     loadStories({ commit }) {
       const stories = Object.keys(storiesJSON)
         .sort((a, b) => a - b)
-        .map((story) => storiesJSON[story]);
+        .map((story) => storiesJSON[story])
+        .map((story) => {
+          if (story.action === "train") {
+            return {
+              ...story,
+              improvement: story.improvement.toFixed(3),
+              skills: story.skills.map((skill) => skill.toFixed(3)),
+            };
+          }
+          return {
+            ...story,
+            test_score: story.test_score.toFixed(3),
+            skills: story.skills.map((skill) => skill.toFixed(3)),
+          };
+        });
 
       commit("LOAD_STORIES", stories);
     },
