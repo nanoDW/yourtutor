@@ -1,10 +1,9 @@
 <template>
   <div class="mx-12 learning-path">
     <div>
-      <h2 class="text-center">
-        Model recons that {{ user.name }} is {{ user.type }} type of learner. Please chose different learning path to see how it
-        impact learning performance.
-      </h2>
+      <h2
+        class="text-center"
+      >Our model identified {{ user.name }} is a {{ user.type }} type of learner. Please choose a different learning path to see how it impacts her learning performance.</h2>
       <div class="text-center mt-6">
         <button
           v-for="type in availableTypes"
@@ -26,7 +25,7 @@ export default {
       user: state => state.user
     }),
     availableTypes() {
-      return ["visuals", "listening", "reading"].filter(
+      return ["visual", "listening", "reading"].filter(
         el => el !== this.user.type
       );
     }

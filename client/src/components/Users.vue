@@ -65,7 +65,7 @@ export default {
         age: 9,
         description:
           "Yara likes to learn from illustrated books, her favourite one is a geographical atlas with maps and photos from different locations. She also enjoys watching morning shows with foreign language classes as she can easily link meanings of words with their visual shapes.",
-        type: "visuals"
+        type: "visual"
       };
     },
     boy() {

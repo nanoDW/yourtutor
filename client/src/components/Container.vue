@@ -1,9 +1,9 @@
 <template>
   <div class="content-container" :class="{ active: isActive }">
-    <v-card height="100%" style="border-radius: 1.75rem !important;">
+    <v-card height="100%" style="border-radius: 1.75rem !important; max-height: 100vh; ">
       <div
         class="d-flex flex-wrap align-center justify-center"
-        style="height: 100%; overflow:hidden"
+        style="height: 100%; overflow: scroll"
       >
         <component :is="component" :currentStep="currentStep" />
       </div>
@@ -15,6 +15,7 @@
 import { mapState } from "vuex";
 import StartButton from "./StartButton";
 import LearningPath from "./LearningPath.vue";
+import Stats from "./Stats.vue";
 
 export default {
   components: {},
@@ -24,7 +25,11 @@ export default {
       currentStep: state => state.currentStep
     }),
     isActive() {
-      return this.currentStep === 3 || this.currentStep === 5;
+      return (
+        this.currentStep === 3 ||
+        this.currentStep === 5 ||
+        this.currentStep === 7
+      );
     },
     component() {
       switch (this.currentStep) {
@@ -32,6 +37,8 @@ export default {
           return StartButton;
         case 5:
           return LearningPath;
+        case 7:
+          return Stats;
         default:
           return StartButton;
       }
