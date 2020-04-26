@@ -33,8 +33,8 @@ export default {
   methods: {
     ...mapActions(["chooseLearningType", "changeStep"]),
     chooseType(type) {
-      this.chooseLearningType(type);
       this.changeStep(1);
+      this.chooseLearningType(type);
     }
   }
 };

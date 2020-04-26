@@ -70,7 +70,7 @@ export default {
     ...mapState({
       currentStep: state => state.currentStep,
       stories: state => state.stories,
-      chosenPath: state => state.chosenPath
+      createdPath: state => state.createdPath
     }),
     isActive() {
       return this.currentStep === 4 || this.currentStep === 6;
@@ -100,11 +100,11 @@ export default {
     simulateTraining() {
       let loadedStoriesAmount = 0;
       const interval = setInterval(() => {
-        if (loadedStoriesAmount < this.chosenPath.length) {
-          this.loadedStories.unshift(this.chosenPath[loadedStoriesAmount]);
+        if (loadedStoriesAmount < this.createdPath.length) {
+          this.loadedStories.unshift(this.createdPath[loadedStoriesAmount]);
           loadedStoriesAmount += 1;
 
-          if (loadedStoriesAmount === this.chosenPath.length) {
+          if (loadedStoriesAmount === this.createdPath.length) {
             this.changeStep(1);
             clearInterval(interval);
           }
