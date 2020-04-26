@@ -4,9 +4,10 @@
       <h1 class="description-title">Welcome to your personalized path of education</h1>
       <p>
         We would like to give you a taste of how Artificial Intelligence can be used to provide students with tailored
-        education materials. Everyone has their own way of learning and gains knowledge and skills at a different pace
-        for each topic. Our solution can build thousands of models with goal to achieve highest learning efficiency with
-        respect to student's potential in different areas and provide a personalised learning path.
+        education materials and support teachers in remote education. Everyone has their own way of learning and gains
+        knowledge and skills at a different pace for each topic. Our solution can build thousands of models with goal
+        to achieve highest learning efficiency with respect to student's potential in different areas and provide
+        a personalised learning path.
       </p>
       <p>
         We present our solution on two actors - students - for which we built customised models for foreign language
