@@ -1,1 +1,222 @@
-{"170":{"action":"train","subject":"reading comprehension","difficulty":"advanced","improvement":0.709,"learning_type":"reading","test_score":null,"step":170,"skills":[70.976,88.827,77.428]},"180":{"action":"train","subject":"grammar","difficulty":"medimum","improvement":0.195,"learning_type":"visuals","test_score":null,"step":180,"skills":[72.999,91.252,77.516]},"190":{"action":"train","subject":"vocabulary","difficulty":"medimum","improvement":0.196,"learning_type":"reading","test_score":null,"step":190,"skills":[73.417,92.168,79.333]},"200":{"action":"train","subject":"reading comprehension","difficulty":"advanced","improvement":0.676,"learning_type":"reading","test_score":null,"step":200,"skills":[81.356,92.389,81.718]},"210":{"action":"train","subject":"vocabulary","difficulty":"advanced","improvement":0.799,"learning_type":"reading","test_score":null,"step":210,"skills":[89.965,96.193,82.205]},"220":{"action":"test","subject":"grammar","difficulty":"easy","improvement":null,"learning_type":null,"test_score":99.551,"step":220,"skills":[93.153,98.074,82.685]},"230":{"action":"train","subject":"vocabulary","difficulty":"advanced","improvement":0.913,"learning_type":"reading","test_score":null,"step":230,"skills":[100.0,99.939,82.685]},"240":{"action":"train","subject":"reading comprehension","difficulty":"medimum","improvement":1.679,"learning_type":"listening","test_score":null,"step":240,"skills":[100.0,100.0,84.769]},"250":{"action":"train","subject":"reading comprehension","difficulty":"easy","improvement":0.053,"learning_type":"reading","test_score":null,"step":250,"skills":[100.0,100.0,85.526]},"260":{"action":"train","subject":"grammar","difficulty":"advanced","improvement":0.873,"learning_type":"reading","test_score":null,"step":260,"skills":[100.0,100.0,85.749]},"270":{"action":"train","subject":"reading comprehension","difficulty":"easy","improvement":0.05,"learning_type":"visuals","test_score":null,"step":270,"skills":[100.0,100.0,88.278]},"280":{"action":"train","subject":"vocabulary","difficulty":"easy","improvement":0.043,"learning_type":"reading","test_score":null,"step":280,"skills":[100.0,100.0,88.904]},"290":{"action":"train","subject":"vocabulary","difficulty":"medimum","improvement":0.153,"learning_type":"reading","test_score":null,"step":290,"skills":[100.0,100.0,89.359]},"300":{"action":"train","subject":"grammar","difficulty":"advanced","improvement":7.054,"learning_type":"listening","test_score":null,"step":300,"skills":[100.0,100.0,89.589]},"310":{"action":"train","subject":"vocabulary","difficulty":"medimum","improvement":0.152,"learning_type":"reading","test_score":null,"step":310,"skills":[100.0,100.0,89.886]},"320":{"action":"train","subject":"vocabulary","difficulty":"easy","improvement":0.023,"learning_type":"reading","test_score":null,"step":320,"skills":[100.0,100.0,92.602]},"330":{"action":"train","subject":"reading comprehension","difficulty":"medimum","improvement":1.693,"learning_type":"listening","test_score":null,"step":330,"skills":[100.0,100.0,96.511]},"340":{"action":"train","subject":"vocabulary","difficulty":"easy","improvement":0.003,"learning_type":"visuals","test_score":null,"step":340,"skills":[100.0,100.0,96.511]},"350":{"action":"train","subject":"grammar","difficulty":"easy","improvement":0.035,"learning_type":"reading","test_score":null,"step":350,"skills":[100.0,100.0,97.635]},"360":{"action":"train","subject":"vocabulary","difficulty":"easy","improvement":0.055,"learning_type":"reading","test_score":null,"step":360,"skills":[100.0,100.0,100.0]},"370":{"action":"train","subject":"vocabulary","difficulty":"easy","improvement":0.061,"learning_type":"reading","test_score":null,"step":370,"skills":[100.0,100.0,100.0]},"380":{"action":"train","subject":"grammar","difficulty":"easy","improvement":0.051,"learning_type":"visuals","test_score":null,"step":380,"skills":[100.0,100.0,100.0]},"390":{"action":"train","subject":"grammar","difficulty":"easy","improvement":0.043,"learning_type":"reading","test_score":null,"step":390,"skills":[100.0,100.0,100.0]},"400":{"action":"train","subject":"vocabulary","difficulty":"medimum","improvement":0.188,"learning_type":"reading","test_score":null,"step":400,"skills":[100.0,100.0,100.0]},"410":{"action":"test","subject":"vocabulary","difficulty":"advanced","improvement":null,"learning_type":null,"test_score":99.743,"step":410,"skills":[100.0,100.0,100.0]},"420":{"action":"test","subject":"reading comprehension","difficulty":"easy","improvement":null,"learning_type":null,"test_score":99.901,"step":420,"skills":[100.0,100.0,100.0]},"430":{"action":"train","subject":"vocabulary","difficulty":"easy","improvement":0.044,"learning_type":"reading","test_score":null,"step":430,"skills":[100.0,100.0,100.0]},"440":{"action":"train","subject":"grammar","difficulty":"easy","improvement":0.04,"learning_type":"reading","test_score":null,"step":440,"skills":[100.0,100.0,100.0]},"450":{"action":"train","subject":"reading comprehension","difficulty":"medimum","improvement":0.25,"learning_type":"visuals","test_score":null,"step":450,"skills":[100.0,100.0,100.0]},"460":{"action":"train","subject":"vocabulary","difficulty":"easy","improvement":0.054,"learning_type":"reading","test_score":null,"step":460,"skills":[100.0,100.0,100.0]},"470":{"action":"train","subject":"vocabulary","difficulty":"easy","improvement":0.029,"learning_type":"reading","test_score":null,"step":470,"skills":[100.0,100.0,100.0]},"480":{"action":"train","subject":"reading comprehension","difficulty":"advanced","improvement":0.96,"learning_type":"reading","test_score":null,"step":480,"skills":[100.0,100.0,100.0]},"490":{"action":"train","subject":"vocabulary","difficulty":"advanced","improvement":0.132,"learning_type":"visuals","test_score":null,"step":490,"skills":[100.0,100.0,100.0]}}
+{
+  "170": {
+    "action": "train",
+    "subject": "reading comprehension",
+    "difficulty": "advanced",
+    "improvement": 0.709,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 170,
+    "skills": [70.976, 88.827, 77.428]
+  },
+  "180": {
+    "action": "train",
+    "subject": "grammar",
+    "difficulty": "medimum",
+    "improvement": 0.195,
+    "learning_type": "visuals",
+    "test_score": null,
+    "step": 180,
+    "skills": [72.999, 91.252, 77.516]
+  },
+  "190": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "medimum",
+    "improvement": 0.196,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 190,
+    "skills": [73.417, 92.168, 79.333]
+  },
+  "200": {
+    "action": "train",
+    "subject": "reading comprehension",
+    "difficulty": "advanced",
+    "improvement": 0.676,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 200,
+    "skills": [81.356, 92.389, 81.718]
+  },
+  "210": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "advanced",
+    "improvement": 0.799,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 210,
+    "skills": [89.965, 96.193, 82.205]
+  },
+  "220": {
+    "action": "test",
+    "subject": "grammar",
+    "difficulty": "easy",
+    "improvement": null,
+    "learning_type": null,
+    "test_score": 99.551,
+    "step": 220,
+    "skills": [93.153, 98.074, 82.685]
+  },
+  "230": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "advanced",
+    "improvement": 0.913,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 230,
+    "skills": [100.0, 99.939, 82.685]
+  },
+  "240": {
+    "action": "train",
+    "subject": "reading comprehension",
+    "difficulty": "medimum",
+    "improvement": 1.679,
+    "learning_type": "listening",
+    "test_score": null,
+    "step": 240,
+    "skills": [100.0, 100.0, 84.769]
+  },
+  "250": {
+    "action": "train",
+    "subject": "reading comprehension",
+    "difficulty": "easy",
+    "improvement": 0.053,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 250,
+    "skills": [100.0, 100.0, 85.526]
+  },
+  "260": {
+    "action": "train",
+    "subject": "grammar",
+    "difficulty": "advanced",
+    "improvement": 0.873,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 260,
+    "skills": [100.0, 100.0, 85.749]
+  },
+  "270": {
+    "action": "train",
+    "subject": "reading comprehension",
+    "difficulty": "easy",
+    "improvement": 0.05,
+    "learning_type": "visuals",
+    "test_score": null,
+    "step": 270,
+    "skills": [100.0, 100.0, 88.278]
+  },
+  "280": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "easy",
+    "improvement": 0.043,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 280,
+    "skills": [100.0, 100.0, 88.904]
+  },
+  "290": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "medimum",
+    "improvement": 0.153,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 290,
+    "skills": [100.0, 100.0, 89.359]
+  },
+  "300": {
+    "action": "train",
+    "subject": "grammar",
+    "difficulty": "advanced",
+    "improvement": 7.054,
+    "learning_type": "listening",
+    "test_score": null,
+    "step": 300,
+    "skills": [100.0, 100.0, 89.589]
+  },
+  "310": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "medimum",
+    "improvement": 0.152,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 310,
+    "skills": [100.0, 100.0, 89.886]
+  },
+  "320": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "easy",
+    "improvement": 0.023,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 320,
+    "skills": [100.0, 100.0, 92.602]
+  },
+  "330": {
+    "action": "train",
+    "subject": "reading comprehension",
+    "difficulty": "medimum",
+    "improvement": 1.693,
+    "learning_type": "listening",
+    "test_score": null,
+    "step": 330,
+    "skills": [100.0, 100.0, 96.511]
+  },
+  "340": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "easy",
+    "improvement": 0.003,
+    "learning_type": "visuals",
+    "test_score": null,
+    "step": 340,
+    "skills": [100.0, 100.0, 96.511]
+  },
+  "350": {
+    "action": "train",
+    "subject": "grammar",
+    "difficulty": "easy",
+    "improvement": 0.035,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 350,
+    "skills": [100.0, 100.0, 97.635]
+  },
+  "360": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "easy",
+    "improvement": 0.055,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 360,
+    "skills": [100.0, 100.0, 100.0]
+  },
+  "370": {
+    "action": "train",
+    "subject": "vocabulary",
+    "difficulty": "easy",
+    "improvement": 0.061,
+    "learning_type": "reading",
+    "test_score": null,
+    "step": 370,
+    "skills": [100.0, 100.0, 100.0]
+  },
+  "380": {
+    "action": "train",
+    "subject": "grammar",
+    "difficulty": "easy",
+    "improvement": 0.051,
+    "learning_type": "visuals",
+    "test_score": null,
+    "step": 380,
+    "skills": [100.0, 100.0, 100.0]
+  }
+}

@@ -103,8 +103,6 @@ export default {
         if (loadedStoriesAmount < this.createdPath.length) {
           this.loadedStories.unshift(this.createdPath[loadedStoriesAmount]);
           loadedStoriesAmount += 1;
-          // eslint-disable-next-line
-          debugger;
           if (loadedStoriesAmount === this.createdPath.length) {
             this.changeStep(1);
             clearInterval(interval);

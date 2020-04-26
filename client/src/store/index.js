@@ -69,7 +69,7 @@ export default new Vuex.Store({
 
       const storiesJSON = await import(`../assets/${state.user.name}_forced_${short}`);
 
-      const stories = Object.keys(storiesJSON).map((story) => storiesJSON[story]);
+      const stories = Object.keys(storiesJSON.default).map((story) => storiesJSON[story]);
 
       commit("CHOOSE_PATH", payload);
       commit("CREATE_PATH", stories);
