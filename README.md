@@ -7,6 +7,7 @@ During coding the idea has changed a little bit - now we dont use any API - we u
 - install dependencies using `npm i` (or `yarn install`)
 - launch app using `npm run serve`
 
+.
 
 # yourtutor
 ## develope code with docker
