@@ -73,6 +73,8 @@ export default new Vuex.Store({
 
       commit("CHOOSE_PATH", payload);
       commit("CREATE_PATH", stories);
+
+      return storiesJSON;
     },
   },
 

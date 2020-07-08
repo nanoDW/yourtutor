@@ -80,36 +80,29 @@ export default {
     returnSkillsAsAString(skills) {
       return skills.join(", ");
     },
-    simulateLoadingData() {
+    simulateLearning(stories) {
       let loadedStoriesAmount = 0;
       const interval = setInterval(() => {
-        if (loadedStoriesAmount < this.stories.length) {
-          this.loadedStories.unshift(this.stories[loadedStoriesAmount]);
+        if (loadedStoriesAmount < stories.length) {
+          this.loadedStories.unshift(stories[loadedStoriesAmount]);
           loadedStoriesAmount += 1;
 
-          if (loadedStoriesAmount === this.stories.length) {
+          if (loadedStoriesAmount === stories.length) {
             this.changeStep(1);
             clearInterval(interval);
           }
+        } else {
+          this.changeStep(1);
         }
       }, 500);
 
       return 0;
     },
+    simulateLoadingData() {
+      this.simulateLearning(this.stories);
+    },
     simulateTraining() {
-      let loadedStoriesAmount = 0;
-      const interval = setInterval(() => {
-        if (loadedStoriesAmount < this.createdPath.length) {
-          this.loadedStories.unshift(this.createdPath[loadedStoriesAmount]);
-          loadedStoriesAmount += 1;
-          if (loadedStoriesAmount === this.createdPath.length) {
-            this.changeStep(1);
-            clearInterval(interval);
-          }
-        }
-      }, 500);
-
-      return 0;
+      this.simulateLearning(this.createdPath);
     }
   },
   watch: {
