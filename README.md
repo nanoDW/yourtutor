@@ -1,13 +1,11 @@
 UPDATE:
 live: https://gentle-savannah-46514.herokuapp.com/#/
 App was created during hackaton `EUvsVirus` (https://www.euvsvirus.org).
-During coding the idea has changed a little bit - now we dont use any API - we use only JSON files created using ML simulations. Frontend doesnt need docker to be run - to run this app locally you should:
+During coding the idea has changed a little bit - now we dont use any API - we use only JSON files created using ML simulations. Frontend doesnt need docker to be launched - to run this app locally you should:
 - clone repository,
 - change directory to `/yourtutor/client`
 - install dependencies using `npm i` (or `yarn install`)
 - launch app using `npm run serve`
-
-.
 
 # yourtutor
 ## develope code with docker
