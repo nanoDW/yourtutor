@@ -1,19 +1,19 @@
 <template>
   <v-row>
-    <v-col cols="3">
+    <v-col cols="12" md="6" lg="3" class="logo-order">
       <v-row>
         <Logo @click.native="goToWelcomeScreen" />
       </v-row>
       <v-row class="px-6 mt-12">
-        <v-card v-if="user.name" class="pt-8" style="border-radius: 1.75rem !important;">
+        <v-card v-if="user.name" class="pt-8 mx-auto" style="border-radius: 1.75rem !important;">
           <User :user="user" />
         </v-card>
       </v-row>
     </v-col>
-    <v-col cols="6" class="my-12">
+    <v-col cols="12" md="12" lg="6" class="my-12 container-order">
       <AppContainer />
     </v-col>
-    <v-col cols="3" class="my-12">
+    <v-col cols="12" md="6" lg="3" class="my-12 history-order">
       <History />
     </v-col>
   </v-row>
@@ -35,6 +35,9 @@ export default {
       this.$router.push("/");
     },
   },
+  mounted() {
+    if(window) window.scrollTo(0, 0);
+  },
   computed: {
     ...mapState({
       user: (state) => state.user,
@@ -47,3 +50,5 @@ export default {
   },
 };
 </script>
+
+<style src="../styles/about.scss" lang="scss" scoped />

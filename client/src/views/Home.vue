@@ -1,9 +1,9 @@
 <template>
   <v-row>
-    <v-col cols="3">
+    <v-col cols="12" md="3">
       <Logo />
     </v-col>
-    <v-col cols="6">
+    <v-col cols="12" md="9" lg="6">
       <v-row>
         <Description />
       </v-row>

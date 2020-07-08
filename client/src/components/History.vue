@@ -1,8 +1,7 @@
 <template>
-  <div class="history" :class="{ active: isActive }">
+  <div class="history" ref="history" :class="{ active: isActive }">
     <v-card
       height="100%"
-      max-height="calc(100vh)"
       style="border-radius: 1.75rem !important; !important; overflow: scroll;"
       class="pa-4"
     >
@@ -116,6 +115,7 @@ export default {
   watch: {
     isActive() {
       if (this.isActive) {
+        this.$refs.history.scrollIntoView();
         this.currentStep === 4
           ? this.simulateLoadingData()
           : this.simulateTraining();

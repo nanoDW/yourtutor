@@ -1,5 +1,5 @@
 <template>
-  <div class="content-container" :class="{ active: isActive }">
+  <div ref="container" class="content-container" :class="{ active: isActive }">
     <v-card height="100%" style="border-radius: 1.75rem !important;  ">
       <div
         class="d-flex flex-wrap align-center justify-center"
@@ -41,6 +41,13 @@ export default {
           return Stats;
         default:
           return StartButton;
+      }
+    }
+  },
+  watch: {
+    isActive() {
+      if (this.isActive) {
+        this.$refs.container.scrollIntoView();
       }
     }
   }

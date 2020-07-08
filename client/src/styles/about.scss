@@ -1,0 +1,30 @@
+@import "../styles/mixins.scss";
+
+@include md {
+  .logo-order {
+    order: 0;
+  }
+
+  .container-order {
+    order: 2
+  }
+
+
+  .history-order {
+    order: 1
+  }
+}
+
+@include lg {
+  .logo-order {
+    order: 0;
+  }
+
+  .container-order {
+    order: 1
+  }
+
+  .history-order {
+    order: 2;
+  }
+}
